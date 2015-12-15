@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="skin_colorPrimary">#CDDC39</color>
+    <color name="skin_colorPrimaryDark">#AFB42B</color>
+    <color name="skin_colorAccent">#FF4081</color>
+
+
+    <!--应用内换肤yellow资源-->
+    <!-- 会记录上次换附后的颜色-->
+    <color name="skin_colorPrimary_yellow">#FFEB3B</color>
+    <color name="skin_colorPrimaryDark_yellow">#FBC02D</color>
+    <color name="skin_colorAccent_lime_yellow">#FF4081</color>
+
+
+    <!--应用内换肤red资源-->
+    <color name="skin_colorPrimary_mred">#F44336</color>
+    <color name="skin_colorPrimaryDark_mred">#D32F2F</color>
+    <color name="skin_colorAccent_mred">#FF4081</color>
+
+
+    <!--应用内换肤purple资源-->
+    <color name="skin_colorPrimary_purple">#9C27B0</color>
+    <color name="skin_colorPrimaryDark_purple">#7B1FA2</color>
+    <color name="skin_colorAccent_purple">#FF4081</color>
+
+
+    <!--应用内换肤lime资源-->
+    <color name="skin_colorPrimary_lime">#CDDC39</color>
+    <color name="skin_colorPrimaryDark_lime">#AFB42B</color>
+    <color name="skin_colorAccent_lime">#FF4081</color>
+
+
+    <!--应用内换肤orange资源-->
+    <color name="skin_colorPrimary_orange">#FF9800</color>
+    <color name="skin_colorPrimaryDark_orange">#F57C00</color>
+    <color name="skin_colorAccent_orange">#FF4081</color>
+
+
+
+    <!--应用内换肤green资源-->
+    <color name="skin_colorPrimary_green">#4CAF50</color>
+    <color name="skin_colorPrimaryDark_green">#388E3C</color>
+    <color name="skin_colorAccent_green">#FF4081</color>
+
+
+    <!--应用内换肤blue资源-->
+    <color name="skin_colorPrimary_blue">#2196F3</color>
+    <color name="skin_colorPrimaryDark_blue">#1976D2</color>
+    <color name="skin_colorAccent_blue">#FF4081</color>
+
+
+
+    <color name="colorPrimary50">#F9FBE7</color>
+    <color name="colorPrimary100">#F0F4C3</color>
+    <color name="colorPrimary200">#E6EE9C</color>
+    <color name="colorPrimary300">#DCE775</color>
+    <color name="colorPrimary400">#D4E157</color>
+    <color name="colorPrimary600">#C0CA33</color>
+    <color name="colorPrimary800">#9E9D24</color>
+    <color name="colorPrimary900">#827717</color>
+    <color name="colorPrimary_a100">#F4FF81</color>
+    <color name="colorPrimary_a200">#EEFF41</color>
+    <color name="colorPrimary_a300">#C6FF00</color>
+    <color name="colorPrimary_a700">#AEEA00</color>
+
+
+    <color name="statusbar_start_color">#95000000</color>
+    <color name="half_tran">#60000000</color>
+    <color name="trans">#00000000</color>
+    <color name="common_line">#c7c7c7</color>
+    <color name="common_text_color">#444444</color>
+    <color name="common_text_color2">#333333</color>
+    <color name="common_red_color">#F44336</color>
+    <color name="common_background">#f2f4f5</color>
+
+
+    <color name="color_pink">#E91E63</color>
+    <color name="color_purple">#9C27B0</color>
+    <color name="color_orange">#FF9800</color>
+
+
+    <color name="dialog_text_color">#4f7aa4</color>
+    <color name="dialog_text_color_2">#884f7aa4</color>
+
+    <color name="shake_color">#e9d3ac</color>
+</resources>

@@ -1,0 +1,48 @@
+<resources>
+
+
+    <!-- Base application theme. -->
+
+    <!-- <item name="android:windowTranslucentNavigation">true</item>-->
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="colorPrimary">@color/skin_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/skin_colorPrimaryDark</item>
+        <item name="colorAccent">@color/skin_colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/skin_colorPrimary</item>
+    </style>
+
+    <style name="myActionBarStyleRed" parent="android:Widget.ActionBar" >
+        <item name="android:background">@color/skin_colorPrimary_mred</item>
+    </style>
+
+    <style name="myActionBarStyleYellow" parent="android:Widget.ActionBar" >
+        <item name="android:background">@color/skin_colorPrimary_yellow</item>
+    </style>
+
+    <style name="myActionBarStylePurple" parent="android:Widget.ActionBar" >
+        <item name="android:background">@color/skin_colorPrimary_purple</item>
+    </style>
+
+</resources>

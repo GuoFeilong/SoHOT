@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/item_film_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_item_film_cover"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:src="@mipmap/bg_sohot_loading_red"-->
+            <!--android:layout_height="150dp" />-->
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/iv_item_film_cover"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/bg_sohot_loading_red" />
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_item_film_cover"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_vertical_margin2">
+
+
+                <TextView
+                    android:id="@+id/tv_item_film_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="真实的案例"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/title_sub_small_size" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commond_line_height"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:background="@color/common_line" />
+
+                <TextView
+                    android:id="@+id/tv_item_film_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:text="类别: 自拍"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/title_sub_size" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commond_line_height"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:background="@color/common_line" />
+
+                <TextView
+                    android:id="@+id/tv_item_film_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:text="更新 : 今天"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/title_sub_size" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commond_line_height"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:background="@color/common_line" />
+
+                <TextView
+                    android:id="@+id/tv_item_film_itemViewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:text="浏览次数: 0"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/title_sub_size" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commond_line_height"
+                    android:layout_marginTop="@dimen/activity_vertical_margin2"
+                    android:background="@color/common_line" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

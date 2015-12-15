@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义音乐loading属性-->
+    <declare-styleable name="music_loading_style">
+        <attr name="music_loading_desc" format="string" />
+        <attr name="music_loading_bg" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="MyCircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="XCRoundRectImageView_style">
+        <attr name="corner_size" format="dimension"/>
+    </declare-styleable>
+
+</resources>

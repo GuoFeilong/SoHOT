@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">SoHOT</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="serch">SoHOT is developing now,please wait .... </string>
+    <string name="sohot_ad">__来自内心深处的艺术探索</string>
+    <string name="about">关于SoHOT</string>
+    <string name="vip_title">SoHOT会员专享</string>
+    <string name="sohot_free_title">SoHOT体验说明</string>
+    <string name="shot_accept_desc">SoHOT对其发行的或与合作公司共同发行的包括但不限于产品或服务的全部内容材料拥有版权等知识产权，受法律保护。
+未经本公司书面许可，任何单位及个人不得以任何方式或理由对上述产品、服务、信息、材料的任何部分进行使用、复制、修改、抄录、传播或与其它产品捆绑使用、销售。
+凡侵犯本公司版权等知识产权的，本公司必依法追究其法律责任。接受的用户讲获得免费体验不少于60分钟的试用！</string>
+
+    <string name="accept">接受</string>
+    <string name="exit">退出</string>
+
+    <string name="changeskin">主题换肤</string>
+    <string name="no_more_data">SoHOT没有更多的数据...</string>
+    <string name="out_of_data">客官,您的免费体验时间已经到期,程序即将退出,谢谢!</string>
+    <string name="vip_title_notice">客官,开通会员即可直达哦..</string>
+    <string name="loading">客官,伦家正在加载...</string>
+    <string name="notice_important">郑重声明：我们立足于美利坚合众国，对非大陆地区华人服务，请未成年及大陆网友自觉离开！</string>
+    <string name="no_internet">"客官,没有可用的网络哦!"</string>
+    <string name="start_desc">"SoHOT 个人开发所有2015-2016,随时关闭"</string>
+    <string name="about_desc">   __一款了解你内心深处的app,一款很多bug但你依然爱的app, 一款Android爱好者的app一款把技术照进现实的app......\n \n \n                              开发者:SoHOT\n \n \n                              最终解释权归开发者所有,不承担任何法律责任</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pop_more_share">分享</string>
+    <string name="pop_more_shake"> 摇时间</string>
+    <string name="pop_more_about"> 关于</string>
+
+    <string name="shake_time">摇时间</string>
+    <string name="shake_no_time">很遗憾,再摇一次试试!</string>
+    <string name="no_shake_count">今日次数已经用完,请明天再来!</string>
+    <string name="has_shake_time">恭喜你,免费体验时间增加</string>
+</resources>

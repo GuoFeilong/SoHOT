@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_sumoption_container"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@android:color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin2"
+    android:paddingRight="@dimen/activity_horizontal_margin2"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:id="@+id/iv_menu_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin2"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/topmenu_icn_zonghetuqu" />
+
+
+    <TextView
+        android:id="@+id/textview_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_menu_icon"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/title_size" />
+
+
+
+
+    <TextView
+        android:id="@+id/textview_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/statusbar_start_color"
+        android:textSize="@dimen/title_sub_size" />
+
+
+    <TextView
+        android:id="@+id/textview_sub_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/textview_value"
+        android:layout_centerVertical="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/statusbar_start_color"
+        android:textSize="@dimen/title_sub_size" />
+
+
+    <ImageView
+        android:id="@+id/iv_v_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/textview_value"
+        android:src="@mipmap/bg_vip"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

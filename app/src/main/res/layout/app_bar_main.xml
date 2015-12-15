@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".hot.ui.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/skin_colorPrimary">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_tool_bar_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toolbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/iv_actionbar_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@mipmap/actionbar_menu"
+                android:clickable="true" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_actionbar_discover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/actionbar_discover_normal"
+                    android:clickable="true" />
+
+                <ImageView
+                    android:id="@+id/iv_actionbar_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/actionbar_music_normal"
+                    android:clickable="true" />
+
+                <ImageView
+                    android:id="@+id/iv_actionbar_friends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/actionbar_friends_normal"
+                    android:clickable="true" />
+
+            </LinearLayout>
+
+            <com.sohot.hot.ui.view.CircleImageViewGoogle
+                android:id="@+id/civ_main_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:src="@mipmap/ic_hot_icon" />
+
+            <TextView
+                android:id="@+id/tv_app_name"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textSize="@dimen/title_size_large"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/iv_actionbar_serch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@mipmap/abc_ic_menu_moreoverflow_mtrl_alpha"
+                android:clickable="true" />
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:visibility="gone"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/bg_w_s"
+        android:background="@color/skin_colorPrimary"
+        app:backgroundTint="@color/skin_colorPrimary"
+        app:rippleColor="@color/color_purple" />
+
+</android.support.design.widget.CoordinatorLayout>
