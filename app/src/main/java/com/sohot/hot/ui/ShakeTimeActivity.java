@@ -138,7 +138,7 @@ public class ShakeTimeActivity extends BaseSkinActivity implements View.OnClickL
      */
     private void startAnim() {
 
-        TranslateAnimation ta = new TranslateAnimation(0,10,Animation.RELATIVE_TO_SELF,Animation.RELATIVE_TO_SELF);
+        TranslateAnimation ta = new TranslateAnimation(0, 10, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_SELF);
         ta.setInterpolator(new CycleInterpolator(10));
         ta.setDuration(1000);
         mShakeIconGirl.startAnimation(ta);
