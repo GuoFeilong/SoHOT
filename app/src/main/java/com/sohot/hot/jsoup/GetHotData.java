@@ -121,8 +121,7 @@ public class GetHotData {
             public void run() {
                 Document document;
                 try {
-
-                    document = Jsoup.connect(MyConstant.HOT_ADDRESS_HOME).timeout(MyConstant.HOT_TIME_OUT).get();
+                    document = Jsoup.connect(MyConstant.HOT_ADDRESS_HOME).userAgent(MyConstant.USER_AGENT).timeout(MyConstant.HOT_TIME_OUT).get();
                     Element body = document.body();
 //                    Log.i("menu菜单======", "菜单数据: >>>>>>>>>>>"+body.toString());
                     Elements elements = body.select("div#menu_box > div#ks > #menu");

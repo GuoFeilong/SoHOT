@@ -11,11 +11,14 @@ public class MyConstant {
     /**
      * 网站首页地址
      */
+//    public static final String HOT_ADDRESS_HOME = "http://www.x.cn";
     public static final String HOT_ADDRESS_HOME = "http://www.yazhouse.com";
+    public static final String USER_AGENT = "Mozilla/5.0 (Linux; U; Android 4.4.4; zh-cn; MI 3 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/42.0.0.0 Mobile Safari/537.36 XiaoMi/MiuiBrowser/2.1.1";
+
     /**
      * 超时时间
      */
-    public static final int HOT_TIME_OUT = 1000 * 60 * 5;
+    public static final int HOT_TIME_OUT = 1000 * 60 * 5 * 10;
     /**
      * 免费体验时间秒为单位
      */
@@ -38,6 +41,7 @@ public class MyConstant {
     public static final String PHONE_SDCARD_PAHT = Environment.getExternalStorageDirectory().getPath();
 
     public static final String HOT_FLAG_FILE_NAME = "system.txt";
+
 
     /**
      * 分享相关
