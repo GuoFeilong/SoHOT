@@ -14,7 +14,7 @@ public class MyConstant {
     public static final String HOT_ADDRESS_HOME = "http://www.yazhouse.com";
 
     /**
-     * 请求头的标示,用来伪装jsoup抓包请求
+     * 请求头的标示,用来伪装jsoup抓包请求.setheader来设置请求头信息
      */
     public static final String USER_AGENT = "Mozilla/5.0 (Linux; U; Android 4.4.4; zh-cn; MI 3 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/42.0.0.0 Mobile Safari/537.36 XiaoMi/MiuiBrowser/2.1.1";
 
