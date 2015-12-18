@@ -2,7 +2,7 @@
 <resources>
     <color name="skin_colorPrimary">#CDDC39</color>
     <color name="skin_colorPrimaryDark">#AFB42B</color>
-    <color name="skin_colorAccent">#FF4081</color>
+    <color name="skin_colorAccent">#eeff41</color>
 
 
     <!--应用内换肤yellow资源-->
@@ -15,39 +15,68 @@
     <!--应用内换肤red资源-->
     <color name="skin_colorPrimary_mred">#F44336</color>
     <color name="skin_colorPrimaryDark_mred">#D32F2F</color>
-    <color name="skin_colorAccent_mred">#FF4081</color>
+    <color name="skin_colorAccent_mred">#ff5252</color>
 
 
     <!--应用内换肤purple资源-->
     <color name="skin_colorPrimary_purple">#9C27B0</color>
     <color name="skin_colorPrimaryDark_purple">#7B1FA2</color>
-    <color name="skin_colorAccent_purple">#FF4081</color>
+    <color name="skin_colorAccent_purple">#e040fb</color>
 
 
     <!--应用内换肤lime资源-->
     <color name="skin_colorPrimary_lime">#CDDC39</color>
     <color name="skin_colorPrimaryDark_lime">#AFB42B</color>
-    <color name="skin_colorAccent_lime">#FF4081</color>
+    <color name="skin_colorAccent_lime">#eeff41</color>
 
 
     <!--应用内换肤orange资源-->
     <color name="skin_colorPrimary_orange">#FF9800</color>
     <color name="skin_colorPrimaryDark_orange">#F57C00</color>
-    <color name="skin_colorAccent_orange">#FF4081</color>
-
+    <color name="skin_colorAccent_orange">#ffab40</color>
 
 
     <!--应用内换肤green资源-->
     <color name="skin_colorPrimary_green">#4CAF50</color>
     <color name="skin_colorPrimaryDark_green">#388E3C</color>
-    <color name="skin_colorAccent_green">#FF4081</color>
+    <color name="skin_colorAccent_green">#69f0ae</color>
 
 
     <!--应用内换肤blue资源-->
     <color name="skin_colorPrimary_blue">#2196F3</color>
     <color name="skin_colorPrimaryDark_blue">#1976D2</color>
-    <color name="skin_colorAccent_blue">#FF4081</color>
+    <color name="skin_colorAccent_blue">#448aff</color>
 
+
+    <!--应用内换肤pink资源-->
+    <color name="skin_colorPrimary_pink">#e91e63</color>
+    <color name="skin_colorPrimaryDark_pink">#c2185b</color>
+    <color name="skin_colorAccent_pink">#ff4081</color>
+
+    <!--应用内换肤Indigo资源-->
+    <color name="skin_colorPrimary_indigo">#3f51b5</color>
+    <color name="skin_colorPrimaryDark_indigo">#303f9f</color>
+    <color name="skin_colorAccent_indigo">#536dfe</color>
+
+    <!--应用内换肤Brown资源-->
+    <color name="skin_colorPrimary_brown">#795548</color>
+    <color name="skin_colorPrimaryDark_brown">#5d4037</color>
+    <color name="skin_colorAccent_brown">#a1887f</color>
+
+    <!--应用内换肤Light Green资源-->
+    <color name="skin_colorPrimary_lGreen">#8bc34a</color>
+    <color name="skin_colorPrimaryDark_lGreen">#689f38</color>
+    <color name="skin_colorAccent_lGreen">#b2ff59</color>
+
+    <!--应用内换肤Amber资源-->
+    <color name="skin_colorPrimary_Amber">#ffc107</color>
+    <color name="skin_colorPrimaryDark_Amber">#ffa000</color>
+    <color name="skin_colorAccent_Amber">#ffd740</color>
+
+    <!--应用内换肤Amber资源-->
+    <color name="skin_colorPrimary_dorange">#ff5722</color>
+    <color name="skin_colorPrimaryDark_dorange">#e64a19</color>
+    <color name="skin_colorAccent_dorange">#ff6e40</color>
 
 
     <color name="colorPrimary50">#F9FBE7</color>

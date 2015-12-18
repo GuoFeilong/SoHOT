@@ -57,7 +57,7 @@ public class ChangeSkinActivity extends BaseSkinActivity implements View.OnClick
             StatusBarCompat.compat(this, mCurrentChangeSkinModel.getCardColor());
             ColorDrawable colorDrawable = new ColorDrawable(mCurrentChangeSkinModel.getCardColor());
             actionBar.setBackgroundDrawable(colorDrawable);
-        }else {
+        } else {
             StatusBarCompat.compat(this, getResources().getColor(R.color.skin_colorPrimary));
             ColorDrawable colorDrawable = new ColorDrawable(getResources().getColor(R.color.skin_colorPrimary));
             actionBar.setBackgroundDrawable(colorDrawable);
@@ -84,10 +84,10 @@ public class ChangeSkinActivity extends BaseSkinActivity implements View.OnClick
 
     private void initData() {
 
-        mChangeSkinData = (ArrayList<ChangeSkinModel>) Tools.readObject(this,SKIN_DATA);
-        if (mChangeSkinData!=null&&mChangeSkinData.size()!=0){
+        mChangeSkinData = (ArrayList<ChangeSkinModel>) Tools.readObject(this, SKIN_DATA);
+        if (mChangeSkinData != null && mChangeSkinData.size() != 0) {
 
-        }else {
+        } else {
             mChangeSkinData = new ArrayList<>();
             ChangeSkinModel changeSkinModel = new ChangeSkinModel("SoHOT冰柠檬", -1, R.mipmap.desklrc_color_3_ok, true, getResources().getColor(R.color.skin_colorPrimary_lime), "lime");
             mChangeSkinData.add(changeSkinModel);
@@ -97,13 +97,12 @@ public class ChangeSkinActivity extends BaseSkinActivity implements View.OnClick
             mChangeSkinData.add(changeSkinModel);
             changeSkinModel = new ChangeSkinModel("SoHOT环保绿", -1, R.mipmap.desklrc_color_3_ok, false, getResources().getColor(R.color.skin_colorPrimary_green), "green");
             mChangeSkinData.add(changeSkinModel);
-            changeSkinModel = new ChangeSkinModel("SoHOT激情橙", -1, R.mipmap.desklrc_color_4_ok, false, getResources().getColor(R.color.skin_colorPrimary_orange), "orange");
+            changeSkinModel = new ChangeSkinModel("SoHOT激情橙", -1, R.mipmap.desklrc_color_4_ok, false, getResources().getColor(R.color.skin_colorPrimary_dorange), "dorange");
             mChangeSkinData.add(changeSkinModel);
             changeSkinModel = new ChangeSkinModel("SoHOT风骚紫", -1, R.mipmap.desklrc_color_5_ok, false, getResources().getColor(R.color.skin_colorPrimary_purple), "purple");
             mChangeSkinData.add(changeSkinModel);
 
         }
-
 
 
         mChangeSkinAdapter = new ChangeSkinAdapter(mChangeSkinData);
