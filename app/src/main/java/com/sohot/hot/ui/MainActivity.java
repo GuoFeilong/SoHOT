@@ -88,7 +88,7 @@ import tools.ViewUtils;
 
 public class MainActivity extends BaseSkinActivity implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, View.OnClickListener {
     private static final String TARGET_URL = "http://my.csdn.net/lmj623565791";
-//    private static final String TARGET_URL = "http://www.t66y.com/";
+    //    private static final String TARGET_URL = "http://www.t66y.com/";
     private static final int CHANGE_ICON = 333;
     public static final int TYPE_PIC = 1;
     public static final int TYPE_FILM = 2;
@@ -315,7 +315,7 @@ public class MainActivity extends BaseSkinActivity implements NavigationView.OnN
         // 添加QQ支持, 并且设置QQ分享内容的target url
         UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(this, appId, appKey);
         qqSsoHandler.setTargetUrl(TARGET_URL);
-        qqSsoHandler.setTitle(MyConstant.SOCIAL_TITLE+MyConstant.SOCIAL_CONTENT);
+        qqSsoHandler.setTitle(MyConstant.SOCIAL_TITLE + MyConstant.SOCIAL_CONTENT);
         qqSsoHandler.addToSocialSDK();
 
         // 添加QZone平台
@@ -1107,7 +1107,7 @@ public class MainActivity extends BaseSkinActivity implements NavigationView.OnN
 
 
     /**
-     * 显示自定义dialog,在window中加动画
+     * 显示自定义dialog,在window中加动画,测试注释noting
      */
     private void showCustomDialog() {
         if (mDialog == null) {
