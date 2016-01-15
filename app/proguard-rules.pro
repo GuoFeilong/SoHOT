@@ -56,6 +56,7 @@
 -keep class com.umeng.scrshot.**
 -keep public class com.tencent.** {*;}
 -keep class com.umeng.socialize.sensor.**
+-keep public class com.sohot.hot.MyConstant
 
 -keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage {*;}
 

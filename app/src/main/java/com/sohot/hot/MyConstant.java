@@ -11,7 +11,7 @@ public class MyConstant {
     /**
      * 网站首页地址
      */
-    public static final String HOT_ADDRESS_HOME = "http://www.yazhouse.com";
+    public static final String HOT_ADDRESS_HOME = "http://www.yzse1.com";
 
     /**
      * 请求头的标示,用来伪装jsoup抓包请求.new 注释
