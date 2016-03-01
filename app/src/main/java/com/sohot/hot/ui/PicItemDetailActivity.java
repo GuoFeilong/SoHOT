@@ -30,6 +30,7 @@ import com.sohot.hot.model.CategoryPicItemDesc;
 import com.sohot.hot.model.ChangeSkinModel;
 import com.sohot.hot.ui.categoryfragments.ZongHePicFragment;
 import com.sohot.hot.ui.view.LoadingDialog;
+import com.sohot.hot.ui.view.MyRecyclerView;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class PicItemDetailActivity extends BaseSkinActivity implements View.OnCl
     private static final int SET_UI_DATA = 100;
     private CategoryItemTableItem mCurrentPicData;
     private LoadingDialog mLoadingDialog;
-    private RecyclerView mPics;
+    private MyRecyclerView mPics;
     private GetHotData mGetHotData;
     private AsyncImageLoader imageDownloader;
     private PicDetailAdapter mAdapter;
@@ -55,19 +56,19 @@ public class PicItemDetailActivity extends BaseSkinActivity implements View.OnCl
                     mLoadingDialog.dismiss();
                     final ArrayList<CategoryPicItemDesc> allPics = (ArrayList<CategoryPicItemDesc>) msg.obj;
                     mAdapter = new PicDetailAdapter(allPics);
-                    mAdapter.setOnItemClickLitener(new OnItemClickLitener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            Intent intent = new Intent(PicItemDetailActivity.this, FullImageActivity.class);
-                            intent.putExtra(CURRENT_PIC_DETIAL, allPics.get(position));
-                            startActivity(intent);
-                        }
-
-                        @Override
-                        public void onItemLongClick(View view, int position) {
-
-                        }
-                    });
+//                    mAdapter.setOnItemClickLitener(new OnItemClickLitener() {
+//                        @Override
+//                        public void onItemClick(View view, int position) {
+//                            Intent intent = new Intent(PicItemDetailActivity.this, FullImageActivity.class);
+//                            intent.putExtra(CURRENT_PIC_DETIAL, allPics.get(position));
+//                            startActivity(intent);
+//                        }
+//
+//                        @Override
+//                        public void onItemLongClick(View view, int position) {
+//
+//                        }
+//                    });
                     mPics.setLayoutManager(new LinearLayoutManager(PicItemDetailActivity.this));
                     mPics.setAdapter(mAdapter);
                     break;
@@ -108,11 +109,18 @@ public class PicItemDetailActivity extends BaseSkinActivity implements View.OnCl
             actionBar.setBackgroundDrawable(colorDrawable);
         }
 
+
+        mPics.setNotifyActiviyFinishListener(new MyRecyclerView.NotifyActiviyFinishListener() {
+            @Override
+            public void activityFinish() {
+                finish();
+            }
+        });
     }
 
     private void initView() {
         mLoadingDialog = new LoadingDialog(this, true, getResources().getString(R.string.loading));
-        mPics = (RecyclerView) findViewById(R.id.rlv_pic_details);
+        mPics = (MyRecyclerView) findViewById(R.id.rlv_pic_details);
     }
 
     private void initData() {

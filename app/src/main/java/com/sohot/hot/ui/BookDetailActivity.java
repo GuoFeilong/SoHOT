@@ -18,6 +18,7 @@ import com.sohot.hot.model.CategoryItemTableBookItem;
 import com.sohot.hot.model.ChangeSkinModel;
 import com.sohot.hot.ui.categoryfragments.BookFragment;
 import com.sohot.hot.ui.view.LoadingDialog;
+import com.sohot.hot.ui.view.MyScrollViewF;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class BookDetailActivity extends BaseSkinActivity {
     private TextView mBookDetail;
     private CategoryItemTableBookItem mBookItem;
 
+    private MyScrollViewF myScrollViewF;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -51,7 +53,7 @@ public class BookDetailActivity extends BaseSkinActivity {
         mCurrentChangeSkinModel = (ChangeSkinModel) Tools.readObject(this, ChangeSkinActivity.CURRENT_SKIN_DATA);
         if (mCurrentChangeSkinModel != null) {
             StatusBarCompat.compat(this, mCurrentChangeSkinModel.getCardColor());
-        }else {
+        } else {
             StatusBarCompat.compat(this, getResources().getColor(R.color.skin_colorPrimary));
         }
 
@@ -71,10 +73,10 @@ public class BookDetailActivity extends BaseSkinActivity {
         actionBar.setTitle(mBookItem.getItemBookCategoryName());
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        if (mCurrentChangeSkinModel!=null){
+        if (mCurrentChangeSkinModel != null) {
             ColorDrawable colorDrawable = new ColorDrawable(mCurrentChangeSkinModel.getCardColor());
             actionBar.setBackgroundDrawable(colorDrawable);
-        }else {
+        } else {
             ColorDrawable colorDrawable = new ColorDrawable(getResources().getColor(R.color.skin_colorPrimary));
             actionBar.setBackgroundDrawable(colorDrawable);
         }
@@ -89,11 +91,19 @@ public class BookDetailActivity extends BaseSkinActivity {
         });
 
         mGetHotData.getCategoryTableBookItemDesc(mBookItem);
+
+        myScrollViewF.setNotifyActiviyFinishListener(new MyScrollViewF.NotifyActiviyFinishListener() {
+            @Override
+            public void activityFinish() {
+                finish();
+            }
+        });
     }
 
     private void initView() {
         loadingDialog = new LoadingDialog(this, true, getString(R.string.loading));
         mBookDetail = (TextView) findViewById(R.id.tv_book_details);
+        myScrollViewF = (MyScrollViewF) findViewById(R.id.msv_book);
 
     }
 
