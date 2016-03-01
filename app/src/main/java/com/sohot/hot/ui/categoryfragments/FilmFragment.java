@@ -32,6 +32,7 @@ import java.util.ArrayList;
 
 import tools.AsyncImageLoader;
 import tools.T;
+import tools.Tools;
 import tools.ViewUtils;
 
 /**
@@ -53,7 +54,6 @@ public class FilmFragment extends Fragment {
     private AsyncImageLoader imageDownloader;
     private FilmItemAdapter filmItemAdapter;
     private ArrayList<CategoryItemTableFilmItem> filmItemsData;
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -65,25 +65,37 @@ public class FilmFragment extends Fragment {
                     mAllPagerIndex = filmItemsData.get(0).getAllFilmPageIndex();
 
 //                    Log.e("=======fragment===", "handleMessage: " + picItemDate.toString());
-                        if (filmItemsData != null) {
-                            filmItemAdapter = new FilmItemAdapter(filmItemsData);
-                            filmItemAdapter.setOnItemClickLitener(new OnItemClickLitener() {
-                                @Override
-                                public void onItemClick(View view, int position) {
-                                    T.show(getContext(), getResources().getString(R.string.vip_title_notice), 0);
+                    if (filmItemsData != null) {
+                        filmItemAdapter = new FilmItemAdapter(filmItemsData);
+                        filmItemAdapter.setOnItemClickLitener(new OnItemClickLitener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                CategoryItemTableFilmItem filmItem = filmItemsData.get(position);
+                                final String test= "xfplay://dna=BHeXmwqdDwtXDHIcAeffDHe0DGEgDZycDHH5mGH1AwydmGEfBdMdBa|dx=265039775|mz=042813-323-carib.rmvb";
+                                mGetHotData.setHasGetNextHref(new GetHotData.HasGetNextHref() {
+                                    @Override
+                                    public void hasGetNextHref(String nextHref) {
+                                        if (Tools.openApp(getContext(), "xfplay", test)) {
 
-                                }
+                                        } else {
+                                            T.show(getContext(), "请下载先锋影音", 0);
+                                        }
+                                    }
+                                });
+                                mGetHotData.getCurrentFilmNextHref(filmItem.getItemHref());
 
-                                @Override
-                                public void onItemLongClick(View view, int position) {
-                                    T.show(getContext(), "我是recy的film_longitemclick事件>>>position>>>>" + position, 0);
-                                    ViewUtils.changeActivity(getContext(), FilmDetailActivity.class);
-                                }
-                            });
-                            mFilms.setAdapter(filmItemAdapter);
-                        }
+                            }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+                                T.show(getContext(), "我是recy的film_longitemclick事件>>>position>>>>" + position, 0);
+                                ViewUtils.changeActivity(getContext(), FilmDetailActivity.class);
+                            }
+                        });
+                        mFilms.setAdapter(filmItemAdapter);
+                    }
                     break;
-                case  HAS_GET_NEXT_PAGE_DATA:
+                case HAS_GET_NEXT_PAGE_DATA:
                     ArrayList<CategoryItemTableFilmItem> tempData = (ArrayList<CategoryItemTableFilmItem>) msg.obj;
                     if (msg.arg1 == LOAD_MORE_DATA) {
                         musicLoading.stopLoading();
@@ -162,7 +174,6 @@ public class FilmFragment extends Fragment {
             }
         });
         mGetHotData.getCategoryTableFilmItem(mCategoryItem);
-
 
 
         mFilms.setOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -326,7 +337,7 @@ public class FilmFragment extends Fragment {
 
         class ItemFilmVH extends RecyclerView.ViewHolder {
             private NetworkImageView filmCover;
-//            private ImageView filmCover;
+            //            private ImageView filmCover;
             private TextView filmName;
             private TextView filmCategory;
             private TextView filmUpdateTime;

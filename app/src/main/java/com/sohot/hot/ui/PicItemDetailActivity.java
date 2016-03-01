@@ -14,11 +14,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mylibrary.base.BaseSkinActivity;
 import com.sohot.R;
 import com.sohot.hot.jsoup.GetHotData;
@@ -203,9 +206,19 @@ public class PicItemDetailActivity extends BaseSkinActivity implements View.OnCl
 //                }
 //            });
 
-            ((PicDetailVH) holder).pic.setDefaultImageResId(R.mipmap.bg_sohot_loading_red);
-            ((PicDetailVH) holder).pic.setErrorImageResId(R.mipmap.bg_no_pic);
-            ((PicDetailVH) holder).pic.setImageUrl(allPicItems.get(position).getItemPicHrefs(), mImageLoader);
+//            ((PicDetailVH) holder).pic.setDefaultImageResId(R.mipmap.bg_sohot_loading_red);
+//            ((PicDetailVH) holder).pic.setErrorImageResId(R.mipmap.bg_no_pic);
+//            ((PicDetailVH) holder).pic.setImageUrl(allPicItems.get(position).getItemPicHrefs(), mImageLoader);
+
+
+            Glide.with(PicItemDetailActivity.this)
+                    .load(allPicItems.get(position).getItemPicHrefs())
+                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                    .crossFade()
+                    .centerCrop()
+                    .placeholder(R.mipmap.bg_sohot_loading_red)
+                    .error(R.mipmap.bg_no_pic)
+                    .into(((PicDetailVH) holder).imageView);
 
 
             // 如果设置了回调，则设置点击事件
@@ -237,10 +250,12 @@ public class PicItemDetailActivity extends BaseSkinActivity implements View.OnCl
 
         class PicDetailVH extends RecyclerView.ViewHolder {
             private NetworkImageView pic;
+            private ImageView imageView;
 
             public PicDetailVH(View itemView) {
                 super(itemView);
                 pic = (NetworkImageView) itemView.findViewById(R.id.xciv_pic);
+                imageView = (ImageView) itemView.findViewById(R.id.iv_item_pic);
             }
         }
     }

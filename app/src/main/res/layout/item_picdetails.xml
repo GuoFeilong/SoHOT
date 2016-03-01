@@ -18,6 +18,12 @@
             <com.android.volley.toolbox.NetworkImageView
                 android:id="@+id/xciv_pic"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_item_pic"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
         </RelativeLayout>

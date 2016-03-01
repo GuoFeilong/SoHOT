@@ -1,7 +1,12 @@
 package tools;
 
 import android.app.Activity;
+import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -28,7 +33,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 常用工具类
@@ -314,5 +322,66 @@ public class Tools {
         return String.format("%.2f", value);
     }
 
+
+    /**
+     * 检查系统应用程序，并打开
+     */
+    public static boolean openApp(Context context, String appName,String videoSourth) {
+        //应用过滤条件
+        List<ResolveInfo> mAllApps = new ArrayList<ResolveInfo>();
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        PackageManager mPackageManager = context.getPackageManager();
+        mAllApps = mPackageManager.queryIntentActivities(mainIntent, 0);
+        //按报名排序
+        Collections.sort(mAllApps, new ResolveInfo.DisplayNameComparator(mPackageManager));
+
+        for (ResolveInfo res : mAllApps) {
+            //该应用的包名和主Activity
+            String pkg = res.activityInfo.packageName;
+            String cls = res.activityInfo.name;
+
+            // 打开第三方应用
+            if (pkg.contains(appName)) {
+                ComponentName componet = new ComponentName(pkg, cls);
+                Intent intent = new Intent();
+                intent.setComponent(componet);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+                copy(videoSourth, context);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
+     * 实现文本复制功能
+     * add by wangqianzhou
+     *
+     * @param content
+     */
+    public static void copy(String content, Context context) {
+// 得到剪贴板管理器
+        ClipboardManager cmb = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        cmb.setText(content.trim());
+    }
+
+    /**
+     * 实现粘贴功能
+     * add by wangqianzhou
+     *
+     * @param context
+     * @return
+     */
+    public static String paste(Context context) {
+// 得到剪贴板管理器
+        ClipboardManager cmb = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        return cmb.getText().toString().trim();
+    }
 
 }

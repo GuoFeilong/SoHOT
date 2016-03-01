@@ -1,5 +1,7 @@
 package com.sohot.hot.jsoup;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import com.sohot.hot.MyConstant;
@@ -29,7 +31,12 @@ public class GetHotData {
     private ExecutorService executorService = Executors.newFixedThreadPool(10);
     private CategoryForJson forJson;
     private ArrayList<Category> categories;
-
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
     /**
      * 加载完毕数据的监听
      */
@@ -432,6 +439,56 @@ public class GetHotData {
                         hasGetHotTableBookDetailListener.hasGetHotTableBookDetails(bookDetails);
                     }
 //                    Log.i("小说---子分类标题", "run: >>>>>" + tableItems.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+    }
+
+    public interface HasGetNextHref {
+        void hasGetNextHref(String nextHref);
+    }
+
+    private HasGetNextHref hasGetNextHref;
+
+    public void setHasGetNextHref(HasGetNextHref hasGetNextHref) {
+        this.hasGetNextHref = hasGetNextHref;
+    }
+
+    /**
+     * 获取当前film的下一级界面的超链
+     */
+    public void getCurrentFilmNextHref(final String currentHref) {
+        final ArrayList<CategoryBookItemDesc> bookDetails = new ArrayList<>();
+
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                Document document;
+                try {
+                    document = Jsoup.connect(currentHref).timeout(MyConstant.HOT_TIME_OUT).get();
+                    Element body = document.body();
+                    Elements elements = body.select("div.ContentBox > li");
+                    final String nextHref = MyConstant.HOT_ADDRESS_HOME + elements.select("a").attr("href").toString();
+                    Log.e("TAG____电影超链next", "run: >>>>>" + "----" + nextHref);
+
+
+                    document = Jsoup.connect(nextHref).timeout(MyConstant.HOT_TIME_OUT).get();
+                    Element nextBody = document.body();
+                    Log.e("TAG___next", "run: >>>>下一个body" + nextBody.html());
+
+                    if (hasGetNextHref!=null){
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                hasGetNextHref.hasGetNextHref(nextHref);
+                            }
+                        });
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
